@@ -7,6 +7,6 @@ Hi, I'm Andy and every now and then I like to write down things that are longer 
 
 I currently work as a Product Manager working on Apps for the BBC.  More info on that on my [linkedin page](https://www.linkedin.com/in/mrandyshearer/).
 
-If you are bored, drop me a email on [mailto:andy.shearer@gmail.com](andy.shearer@gmail.com).
+If you are bored, drop me a email on <andy.shearer@gmail.com>.
 
 Cheerio!
