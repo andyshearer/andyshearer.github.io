@@ -29,6 +29,7 @@ twitter_username: mibly
 github_username:  andyshearer
 author: ""
 show_excerpts: true
+google_analytics: "G-NXPCMN1RBR"
 
 # Build settings
 theme: minima
