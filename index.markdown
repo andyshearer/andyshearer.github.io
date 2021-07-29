@@ -5,8 +5,7 @@
 layout: home
 list_title: "Recent Posts"
 ---
-
-# Hello there, 
+Hello there, 
 
 I’m **Andy Shearer**.  I currently work as a Executive Product Manager for the BBC, mainly sticking to mobile apps.  This is my persnoal site, views are my own, yada yada yada.
 
