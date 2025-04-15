@@ -1,0 +1,61 @@
+// Custom CSS code goes here
+header {
+    text-align: center;
+    height: 100%;
+}
+
+.site-logo {
+    margin-bottom: -2rem;
+    max-width: 300px;
+    resize: both;
+    overflow: scroll;
+}
+
+.logo {
+  
+  background-image: url('/img/tinywrenlogo2.png');
+  width: 100%;
+  height: 110px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+
+
+  
+
+}
+
+.logo:hover {
+  background-image: url('/img/tinywrenlogosing2.png');
+}
+
+.subtitle {
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #222;
+  margin: 0 0 10px;
+}
+
+.title {
+  font-size: 14pt;
+  margin-bottom: 0;
+}
+
+.byline {
+  margin-top: 0;
+  font-size: 10pt;
+}
+
+.subtitle {
+  font-style: italic;
+  font-size: 10pt;
+}
+
+
