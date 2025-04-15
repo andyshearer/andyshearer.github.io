@@ -16,6 +16,9 @@ jobs:
 
       - name: Build site
         run: zola build
+      
+      - name: Add CNAME file
+        run: echo "tinywren.dev" > public/CNAME
 
       - name: Upload static files as artifact
         id: deployment
