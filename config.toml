@@ -8,6 +8,7 @@ compile_sass = true
 build_search_index = true
 
 theme = "zola-custom-minimal"
+title  = "Tiny Wren"
 description = "tinywren.dev by Andy Shearer"
 
 generate_feeds = true
