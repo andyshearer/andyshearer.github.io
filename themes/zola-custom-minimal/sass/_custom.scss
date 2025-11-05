@@ -19,18 +19,10 @@ header {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center top;
-
-
-  
-
 }
 
 .logo:hover {
   background-image: url('/img/tinywrenlogosing2.png');
-}
-
-.subtitle {
-
 }
 
 h1,
@@ -60,9 +52,9 @@ h6 {
 
 
 .post-image {
-  max-width: 600px;  
-  width: 100%;       
+  max-width: 600px;   /* change to desired maximum width */
+  width: 100%;        /* scale down on small screens */
   height: auto;
   display: block;
-  margin: 0 auto;   
+  margin: 0 auto;     /* center if desired */
 }
