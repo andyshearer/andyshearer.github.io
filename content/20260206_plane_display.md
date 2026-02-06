@@ -7,7 +7,7 @@ date = 2026-02-06
 
 This advert inspired me, as I often ask myself "Where is that plane going?" when generally pottering about and looking out the window.  Perhaps I'm a five year old at heart.  
 
-So thought about building something that could answer that question for me.  I suspect the neighbours might not like me building something of that scale on the bungalow and opted to be a simple ambient type screen / display in the office instead.
+So thought about building something that could answer that question for me.  I suspect the neighbours might not like me building something of that scale on the bungalow and opted for a simple ambient type screen / display in the office instead.
 
 {{ youtube(id="ij1_njUdADM") }}
 
