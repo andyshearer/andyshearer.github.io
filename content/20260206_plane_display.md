@@ -120,11 +120,11 @@ So this JSON endpoint has the aircraft, with callsigns, lat/longs , headings, al
 ## 2. Add in Airframe and Destination information for the planes.
 The transponders from the planes won’t tell you their entire flight plans, but you get the planes callsign.
 
-A callsign is the unique identifier used in radio communications between an aircraft and air traffic control, or between aircraft.   What is interesting, is that in the case of scheduled flights, which are the vast majority of flights near me, the format of these callsigns denote, the company, and a flight number.  e.g.
+A callsign is the unique identifier used in radio communications between an aircraft and air traffic control, or between aircraft.   In the case of scheduled flights, which are the vast majority of flights near me, the format of these callsigns denote, the company, and a flight number.  e.g.
 
-BA1383  = British Airways,  flight number 1383.
+BA1383  = British Airways and route number 1383.
 
-That route number typically responds to a regular route, in this case, Manchester to Heathrow.  Now these routes don’t change much, only when things go wrong or if the company decide to use the flight number for a different route.
+That route number typically responds to a regular route, in this case, Manchester to Heathrow. 
 
 How to convert a callsign to route, all locally? Step in folks over at Virtual Radar Server who built the following database to use for their virtual ATC software.  
 
@@ -132,18 +132,17 @@ How to convert a callsign to route, all locally? Step in folks over at Virtual R
 
 (Interestingly this is the same Dataset that [adsb.lol API](https://api.adsb.lol/) are using, which I just found out when writing this up!)
 
-This is stored as CSVs, but I for my needs its better in a DB, so I have a simple script that downloads this info and puts into a simple SQLlite db. Its sheduled to update once a week or so.
+This is stored as CSVs, but I for my needs its better in a DB, so I have a simple script that downloads this info and puts into a simple SQLlite db. Its sheduled to update once a week or so, which seems to be enough for my needs.
 
 So I now have my Callsign along with the airports the plane has departed and arriving at.
 
 ### Airframe Info
 
-I also wanted a little bit of detail of the plane themselves.  Think who the operator is, also the aricraft type.   Which the folks over at adsbexchange have.
+I also wanted a little bit of detail of the plane themselves.  Think who the operator is, also the aircraft type.   Which the folks over at adsbexchange have.
 
 [http://downloads.adsbexchange.com/downloads/basic-ac-db.json.gz](https://www.adsbexchange.com/data-samples/)
 
 As with the flight data, I import the airframe info into a local DB.  
-
 
 ## 3. Find the nearest one and send it over to the HomeAssistant MQTT server.
 
