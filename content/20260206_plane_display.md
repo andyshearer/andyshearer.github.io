@@ -154,7 +154,7 @@ Now we need to pull the flight data and the airframe information together, and p
 2. Enrich the plane info with flight and airframe info from our local SQLiteDBs.
 3. Send over MQTT to be consumed by whatever display we want.
 
-The first is pretty simple.  Open the dump1090-fa aircraft feed,  look up of the plan Lat long, my Lat Long ,calculate distance and sort the aircraft array by nearest.  Add the distance to the object.  Select the nearest.
+The first is pretty simple.  Open the dump1090-fa aircraft feed, look up of the plane lat long, my homes lat long, calculate distance and sort the aircraft array by nearest.  Add the distance to the object.  Select the nearest from the array.
 
 Then, for the nearest plane, simply take the callsign and query the two local copies of data source for airframe and flight info in our local DB. 
 
