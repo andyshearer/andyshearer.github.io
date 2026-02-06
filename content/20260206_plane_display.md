@@ -105,11 +105,11 @@ So really the job is to
 
 
 ## 1. Collect Transponder information
-Thankfully, loads of folks already have worked out the hard work of turning a tiny computer, a cheap USB FM/TV tuner, into a device that can listen to plane transponder transmissions.  Indeed, thousands of folks have them setup around the world and they populate services like flightradar24.com and flightaware.com.   FlightRadar24 have a great [tutorial over here](https://www.flightradar24.com/build-your-own), which is basically what I followed.
+Thankfully, loads of folks have already done hard work of turning a tiny computer, a cheap USB FM/TV tuner, into a device that can listen to plane transponder transmissions.  Indeed, thousands of folks have them setup around the world and they populate services like flightradar24.com and flightaware.com.   I followed the [Fight aware installation details](https://www.flightaware.com/adsb/piaware/build/).  
 
-So how do we script this up to be used in our little project?  Well, part of the FlightRadar24 installation is the setup of dump1090, an open source library that listens and decodes the plane transponder broadcast from a Software Defined Radio devices.   I actually use a version which powers the FlightAware feeder which is slightly diffferent, [dump1090-fa.](https://github.com/edgeofspace/dump1090-fa), [fight aware installation details](https://www.flightaware.com/adsb/piaware/build/).  
+So how do we script this up to be used in our little project?  Well, part of the FlightAware installation is the setup of dump1090-fa, an open source library that listens and decodes the plane transponder broadcast from a Software Defined Radio devices.   You can see the details over here [dump1090-fa.](https://github.com/edgeofspace/dump1090-fa), 
 
-When installed you can get a list of aircraft your device is tracking over here.
+When installed you can get a list of aircraft your device is tracking over here as json.
 
 http://127.0.0.1/dump1090-fa/data/aircraft.json
 
