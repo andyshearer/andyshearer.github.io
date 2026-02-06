@@ -27,6 +27,8 @@ Then, when there are no local planes show some temperature stuff.
 
 Its been running for over a year now, and its rather stable!
 
+---
+
 # Why build this/my requirements?
 **Be fun to learn about stuff.** I wanted to play around with SDR, Raspberry Pis, Microcontrollers, Smart homes.  Perhaps 3d Printing? 
 
