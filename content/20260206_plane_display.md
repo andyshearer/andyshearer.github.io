@@ -14,11 +14,11 @@ So I thought about building something that could answer that question for me. I 
 Here is what it's showing.
 
 For the nearest plane that is less than 5 miles away:
-* The callsign of the plane — e.g. EZY16FA.
-* The distance from me in miles — e.g. 3.9.
-* The airport it took off from — EDI = Edinburgh Airport.
-* The airport it's landing at — STN = London Stansted.
-* The plane's altitude — e.g. 33k (33,000 feet).
+* The callsign of the plane. EZY16FA.
+* The distance from me in miles. 3.9.
+* The airport it took off from. EDI = Edinburgh Airport.
+* The airport it's landing at. STN = London Stansted.
+* The plane's altitude. e.g. 33k (33,000 feet).
 
 Then, when there are no local planes, show some temperature stuff:
 * In: 20 (inside temperature).
