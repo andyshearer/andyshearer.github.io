@@ -1,167 +1,165 @@
 +++
-title = "Whats that behind you Andy?"
+title = "What's that behind you Andy?"
 date = 2026-02-06
 +++
 
 {{ youtube(id="GtJx_pZjvzc") }}
 
-This advert inspired me, as I often ask myself "Where is that plane going?" when generally pottering about and looking out the window.  Perhaps I'm a five year old at heart.  
+This advert inspired me, as I often ask myself "Where is that plane going?" when generally pottering about and looking out the window. Perhaps I'm a five-year-old at heart.
 
-So thought about building something that could answer that question for me.  I suspect the neighbours might not like me building something of that scale on the bungalow and opted for a simple ambient type screen / display in the office instead.
+So I thought about building something that could answer that question for me. I suspect the neighbours might not like me building something of that scale on the bungalow, so I opted for a simple ambient screen/display in the office instead.
 
 {{ youtube(id="ij1_njUdADM") }}
 
-Here is what its showing.
+Here is what it's showing.
 
-For the nearest plane that is less than 5 miles away.
-* The Callsign of the plane.  EZY16FA.
-* The distance from me in miles.  3.9.
-* The airport it took off from. EDI = Edinburgh Airport.
-* The airport its landing at.  STN = London Stansted.
-* The planes altitude. 33k, 33,000 feet.
+For the nearest plane that is less than 5 miles away:
+* The callsign of the plane — e.g. EZY16FA.
+* The distance from me in miles — e.g. 3.9.
+* The airport it took off from — EDI = Edinburgh Airport.
+* The airport it's landing at — STN = London Stansted.
+* The plane's altitude — e.g. 33k (33,000 feet).
 
-Then, when there are no local planes show some temperature stuff.
-* In 20.  Inside temperature.
-* Out 7.  Outside temperature.
-* Cons 9.  Conservatory temperature.
+Then, when there are no local planes, show some temperature stuff:
+* In: 20 (inside temperature).
+* Out: 7 (outside temperature).
+* Cons: 9 (conservatory temperature).
 
-Its been running for over a year now, and its rather stable!
+It's been running for over a year now, and it's rather stable!
 
 ---
 
-# Why build this/my requirements?
-**Be fun to learn about stuff.** I wanted to play around with SDR, Raspberry Pis, Microcontrollers, Smart homes.  Perhaps 3d Printing? 
+# Why build this / my requirements?
+**Be fun to learn about stuff.** I wanted to play around with SDR, Raspberry Pis, microcontrollers and smart homes. Perhaps 3D printing?
 
-**Offline**. It would be simple to throw a load of cash on an Aviation API and just display it.   That however, would be costly,  and wouldn’t offer up to the second info I could get by doing this stuff locally.
+**Offline.** It would be simple to throw a load of cash at an aviation API and just display it. That, however, would be costly and wouldn’t offer up-to-the-second info I could get by doing this locally.
 
-**Unobtrusive**. I don’t want bright screens everywhere.  If I had displays I wanted them to fit into my general smart home, so dimmable via smart dimmer. Want them to be liveable and not just a random bunch of wires on a desk.
+**Unobtrusive.** I don’t want bright screens everywhere. If I had displays I wanted them to fit into my general smart home, so dimmable via smart dimmer. I want them to be liveable and not just a random bunch of wires on a desk.
 
-**Extendable**.  I wanted to add N number of devices which could show what is flying over head.  Think of a small screen in the conservatory, one in the living room.  Perhaps some local website. More in the future.
+**Extendable.** I wanted to add N devices that could show what is flying overhead. Think of a small screen in the conservatory, one in the living room, perhaps a local website — more in the future.
 
-**Easy to build**.   I’m not a Radio or Aviation expert, nor know much about building electronics.  Nor do I want to really go deep into those topics.  I have a light interest in all three, but you aren’t going to get me talking on my self built HAM radio set anytime soon.
+**Easy to build.** I’m not a radio or aviation expert, nor do I know much about building electronics. I have a light interest in all three, but you aren’t going to get me talking on my self-built HAM radio set anytime soon.
 
-**A play area.**   My day job means I don’t get to write code anymore, but I do love it so.  So part of this project is giving me space to scratch that itch.  
+**A play area.** My day job means I don’t get to write code much, but I do love it. Part of this project gives me space to scratch that itch.
 
 ---
 
 # The Setup
 
-## PiPlane - Raspberry Pi
+## PiPlane — Raspberry Pi
 
 <img src="/img/posts/20260206_plane_display/tar1090.png" alt="Image tar1090 displaying planes flying over a map in my local area" class="post-image" />
 
-### What it does.
-We have a little raspberry pi with a USB Software defined radio, that listens to plane transponders.  It entriches this transpoder data from other others sources. Hosts a web interface (above).  Also broadcasts the nearest plane to a MQTT server.
+### What it does
+We have a little Raspberry Pi with a USB software-defined radio that listens to plane transponders. It enriches this transponder data from other sources, hosts a web interface (above), and also broadcasts the nearest plane to an MQTT server.
 
 ### Hardware
 
-* Raspberry Pi 4.  SDCard. Power supply.
-* [USB Software Defined Radio.](https://thepihut.com/products/flightaware-pro-stick-plus-usb-sdr-ads-b-receiver)
-* [A fancy arial.](https://thepihut.com/products/60cm-1090mhz-antenna-for-ads-b?variant=41103129215171&country=GB&currency=GBP&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&gad_source=1&gad_campaignid=11673057096&gbraid=0AAAAADfQ4GF31UiksXK_gTGSr8CQJq9xJ&gclid=Cj0KCQiAiKzIBhCOARIsAKpKLAMsFHCQ55xkUfWaQKkg5Bmpt7QnjQVblm8aBxIfHdiBFL1bfoiRMkkaAiAqEALw_wcB)  (though you can get away with a smaller one)
+* Raspberry Pi 4 — SD card and power supply.
+* [USB Software Defined Radio](https://thepihut.com/products/flightaware-pro-stick-plus-usb-sdr-ads-b-receiver).
+* [A fancy aerial](https://thepihut.com/products/60cm-1090mhz-antenna-for-ads-b?variant=41103129215171&country=GB&currency=GBP&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&gad_source=1&gad_campaignid=11673057096&gbraid=0AAAAADfQ4GF31UiksXK_gTGSr8CQJq9xJ&gclid=Cj0KCQiAiKzIBhCOARIsAKpKLAMsFHCQ55xkUfWaQKkg5Bmpt7QnjQVblm8aBxIfHdiBFL1bfoiRMkkaAiAqEALw_wcB) (though you can get away with a smaller one).
 
-I have this installed in the garage, with the arial in the loft.  It gives OK range, if you wanted you can go to town with mounting this outside, high, away from obstructions.   I’m not too bothered about chasing perfect reception/coverage here.   
+I have this installed in the garage, with the aerial in the loft. It gives OK range; if you wanted you can mount this outside, high and away from obstructions. I’m not too bothered about chasing perfect reception/coverage here.
 
 ---
 
 ## Home Assistant
 
 ### What it does
-HomeAssistant is great for many things, in this case I happened to already have it running a load of things in the smart home, and a importantly a [Mosquito MQTT server instance](https://www.home-assistant.io/integrations/mqtt/).  So rather than having multiple message queues on the network, made sense to just open it up to other clients on the network to host the nearest plane messages.  
-
+Home Assistant is great for many things. In this case I already had it running a load of smart-home services and, importantly, a [Mosquitto MQTT server instance](https://www.home-assistant.io/integrations/mqtt/). Rather than run multiple message queues on the network, it made sense to use a single MQTT broker for the nearest-plane messages.
 
 ### Hardware
-* Intel NUC pc running Proxmox and HAOS.
+* Intel NUC PC running Proxmox and HAOS.
 
 ---
 
 ## The Displays
 ### Unicorn(s)
-<img src="/img/posts/20260206_plane_display/unicorn.jpeg" alt="Photo showing to Galactic Unicorns on a wall displaying plane information" class="post-image" />
+<img src="/img/posts/20260206_plane_display/unicorn.jpeg" alt="Photo showing two Galactic Unicorns on a wall displaying plane information" class="post-image" />
 
-#### Whats it made of?
+#### What's it made of?
 
-* 2 x [Pico 2 W Unicorn](https://shop.pimoroni.com/products/space-unicorns?variant=40842033561683)
+* 2 × [Pico 2 W Unicorn](https://shop.pimoroni.com/products/space-unicorns?variant=40842033561683)
 
- I got one to mess around with, then added another, so its an odd setup.  Now they have bigger ones, so if I was doing this again I would grab that.  The code is ropey, but its using Micropython and listening to the local plane and Smart lamp topics.  They also a few climate temperature topics (inside, outside, conservatory) populated from homeassistant integrations.  I also did hook it up to the doorbell topic to make a noise when fired, but is slightly redundent now.
+I got one to mess around with, then added another, so it's an odd setup. Now they have bigger ones, so if I were doing this again I'd grab that. The code is ropey, but it's using MicroPython and listening to the local plane and smart-lamp topics. They also have a few climate temperature topics (inside, outside, conservatory) populated from Home Assistant integrations. I also hooked it up to the doorbell topic to make a noise when triggered, but that's slightly redundant now.
 
 ### OLED Plane Display
 {{ youtube(id="XmJ0cCHhQJM") }}
 
-#### Whats it made of?
+#### What's it made of?
 
-* Raspberry Pi ZeroW
+* Raspberry Pi Zero W
 * Raspbian
-* OLED screen.
+* OLED screen
 
-This sits in the living room for now.  I’m working on my 3D cad skills to print of a nicer container for it.  But this crappy box does for now.
+This sits in the living room for now. I’m working on my 3D CAD skills to print a nicer container for it, but this temporary box does for now.
 
 ---
 
 # The Software
-So really the job is to 
-1. Collect Transponder information
-2. Add in Airframe and Destination information for the planes.
-3. Find the nearest one and send it over to the HomeAssistant MQTT server.
-4. Configure the Displays to show Plane and temperature info.
-5. Configure HomeAssistant and the displays to work as dimmable lamps in my smarthome setup
+So really the job is to:
+1. Collect transponder information
+2. Add in airframe and destination information for the planes
+3. Find the nearest one and send it over to the Home Assistant MQTT server
+4. Configure the displays to show plane and temperature info
+5. Configure Home Assistant and the displays to work as dimmable lamps in my smart-home setup
 
 
-## 1. Collect Transponder information
-Thankfully, loads of folks have already done hard work of turning a tiny computer, a cheap USB FM/TV tuner, into a device that can listen to plane transponder transmissions.  Indeed, thousands of folks have them setup around the world and they populate services like flightradar24.com and flightaware.com.   I followed the [Fight aware installation details](https://www.flightaware.com/adsb/piaware/build/).  
+## 1. Collect transponder information
+Thankfully, loads of folks have already done the hard work of turning a tiny computer and a cheap USB FM/TV tuner into a device that can listen to plane-transponder transmissions. Thousands of people have them set up around the world and they populate services like flightradar24.com and flightaware.com. I followed the [FlightAware installation details](https://www.flightaware.com/adsb/piaware/build/).
 
-So how do we script this up to be used in our little project?  Well, part of the FlightAware installation is the setup of dump1090-fa, an open source library that listens and decodes the plane transponder broadcast from a Software Defined Radio devices.   You can see the details over here [dump1090-fa.](https://github.com/edgeofspace/dump1090-fa), 
+Part of the FlightAware installation is the setup of dump1090-fa, an open-source project that listens and decodes the plane-transponder broadcasts from a software-defined radio. You can see the details over here: [dump1090-fa](https://github.com/edgeofspace/dump1090-fa).
 
-When installed you can get a list of aircraft your device is tracking over here as json.
+When installed you can get a list of aircraft your device is tracking as JSON at:
 
 http://127.0.0.1/dump1090-fa/data/aircraft.json
 
-Now, there are probably better ways of getting this out of dump1090 than relying on a JSON feed over HTTP.   However, when looking into it the nitty gritty of possible outputs of dump1090, my eyes start to glaze over and remember I don’t particularly want to go into the weeds on this. 
+There are probably better ways of getting this out of dump1090 than relying on a JSON feed over HTTP. However, when looking into the nitty-gritty of possible dump1090 outputs, my eyes start to glaze over and I remember I don’t particularly want to go into the weeds on this.
 
-So this JSON endpoint has the aircraft, with callsigns, lat/longs , headings, altitude and a whole load of other data updated every second.    Plus JSON over HTTP is easy for a hack like me to play with.
+This JSON endpoint has the aircraft with callsigns, lat/longs, headings, altitude and a whole load of other data updated every second. JSON over HTTP is easy for a hack like me to play with.
 
-## 2. Add in Airframe and Destination information for the planes.
-The transponders from the planes won’t tell you their entire flight plans, but you get the planes callsign.
+## 2. Add in airframe and destination information for the planes
+The transponders from the planes won’t tell you their entire flight plans, but you do get the plane's callsign.
 
-A callsign is the unique identifier used in radio communications between an aircraft and air traffic control, or between aircraft.   In the case of scheduled flights, which are the vast majority of flights near me, the format of these callsigns denote, the company, and a flight number.  e.g.
+A callsign is the unique identifier used in radio communications between an aircraft and air traffic control, or between aircraft. In the case of scheduled flights (the vast majority of flights near me), the format of these callsigns denotes the company and a flight number, e.g.:
 
-BA1383  = British Airways and route number 1383.
+BA1383 = British Airways and route number 1383.
 
-That route number typically responds to a regular route, in this case, Manchester to Heathrow. 
+That route number typically corresponds to a regular route — in this case, Manchester to Heathrow.
 
-How to convert a callsign to route, all locally? Step in folks over at Virtual Radar Server who built the following database to use for their virtual ATC software.  
+How to convert a callsign to a route, all locally? Step in the folks over at Virtual Radar Server who built the following database to use for their virtual ATC software:
 
 [vradarserver/standing-data: Dumps of aviation data from Virtual Radar Server's SDM site.](https://github.com/vradarserver/standing-data)
 
-(Interestingly this is the same Dataset that [adsb.lol API](https://api.adsb.lol/) are using, which I just found out when writing this up!)
+(Interestingly, this is the same dataset that the [adsb.lol API](https://api.adsb.lol/) uses.)
 
-This is stored as CSVs, but I for my needs its better in a DB, so I have a simple script that downloads this info and puts into a simple SQLlite db. Its sheduled to update once a week or so, which seems to be enough for my needs.
+This is stored as CSVs, but for my needs it's better in a DB, so I have a simple script that downloads this info and puts it into a simple SQLite DB. It's scheduled to update once a week or so, which seems to be enough for my needs.
 
-So I now have my Callsign along with the airports the plane has departed and arriving at.
+So I now have my callsign along with the airports the plane has departed from and is arriving at.
 
-### Airframe Info
+### Airframe info
 
-I also wanted a little bit of detail of the plane themselves.  Think who the operator is, also the aircraft type.   Which the folks over at adsbexchange have.
+I also wanted a little bit of detail about the planes themselves — who the operator is and the aircraft type. The folks over at adsbexchange provide this:
 
 [http://downloads.adsbexchange.com/downloads/basic-ac-db.json.gz](https://www.adsbexchange.com/data-samples/)
 
-As with the flight data, I import the airframe info into a local DB.  
+As with the flight data, I import the airframe info into a local DB.
 
-## 3. Find the nearest one and send it over to the HomeAssistant MQTT server.
+## 3. Find the nearest one and send it over to the Home Assistant MQTT server
 
-Now we need to pull the flight data and the airframe information together, and ping it over to the MQTT server.  So i build a simple Python script that does does the following.
+Now we need to pull the flight data and the airframe information together, and ping it over to the MQTT server. So I built a simple Python script that does the following:
 
-1. Find the nearest plane from dump1090 feed.
-2. Enrich the plane info with flight and airframe info from our local SQLiteDBs.
-3. Send over MQTT to be consumed by whatever display we want.
+1. Find the nearest plane from the dump1090 feed
+2. Enrich the plane info with flight and airframe info from our local SQLite DBs
+3. Send over MQTT to be consumed by whatever display we want
 
-The first is pretty simple.  Open the dump1090-fa aircraft feed, look up of the plane lat long, my homes lat long, calculate distance and sort the aircraft array by nearest.  Add the distance to the object.  Select the nearest from the array.
+The first is pretty simple: open the dump1090-fa aircraft feed, look up the plane lat/long and my home's lat/long, calculate distance and sort the aircraft array by nearest. Add the distance to the object and select the nearest from the array.
 
-Then, for the nearest plane, simply take the callsign and query the two local copies of data source for airframe and flight info in our local DB. 
+Then, for the nearest plane, take the callsign and query the two local copies of data for airframe and flight info in our local DB.
 
-Then its simply the case to ping it over MQTT. via a library like [paho-mqtt.](https://pypi.org/project/paho-mqtt/)
+Then it's simply the case of pinging it over MQTT via a library like [paho-mqtt](https://pypi.org/project/paho-mqtt/).
 
-A final MQTT message  we send to our HomeAssistant server looks like this if a plane is within 5 miles, and is updated every few seconds.  In this case, a Boeing 737-800 operating by ASL Airlines UK, going from Manchester Airport to Charles de Gaulle.  We even get details stuff such as roll, speed, and the rather interesting [squawk codes](https://en.wikipedia.org/wiki/List_of_transponder_codes).
-
+A final MQTT message we send to our Home Assistant server looks like this if a plane is within 5 miles, and is updated every few seconds. In this example, a Boeing 737-800 operated by ASL Airlines UK, going from Manchester Airport to Charles de Gaulle. We even get detailed fields such as roll, speed, and the rather interesting [squawk codes](https://en.wikipedia.org/wiki/List_of_transponder_codes).
 ```
 {
   "hex": "407f6e",
